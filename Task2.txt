@@ -1,2 +1,9 @@
-1. docker run busybox
-2. 
+1. docker pull busybox
+2. docker run busybox uptime
+3. docker run -it busybox sh
+  i#wget google.com
+  i#exit
+4. docker ps -a
+5. docker rm $(docker ps -aq)
+6. docker images
+7. docker rmi $(docker images -q)

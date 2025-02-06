@@ -1,0 +1,4 @@
+1. vim app.py
+2. vim templates/index.html
+3. docker build -t myflaskimage .
+4. docker run -p 8888:5000 myflaskimage
