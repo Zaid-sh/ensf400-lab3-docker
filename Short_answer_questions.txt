@@ -1,0 +1,40 @@
+1. What is the difference between a Docker container and a Docker image?
+Docker images contain everyhting needed to run an application but can't be modified and docker containers are the running instance of 
+the docker image.
+
+2. How does Docker ensure isolation between containers?
+Docker ensures that each container has isolated processes so that no other process can change anything. You can think of it as each
+container is its own VM and no one else can access it.
+
+3. What are the benefits of using Alpine Linux as a base image for containers?
+Small size, perfromance is quick since there is low resource consumption.
+
+4. What is Docker Hub, and how does it relate to image registries?
+Docker Hub (Docker Store) is basically where you grab images from if it is not in your machine (locally).  
+
+5. What command did you use to check the installed Docker version? What was the output?
+docker --version. Docker version 27.3.1-1, build ce1223035ac3ab8922717092e63a184cf67b493d.
+
+6. How can you list all running containers, and what information does the output provide?
+docker ps -a. The values asscoiated with the containers.
+
+7. How would you run an interactive Alpine Linux container and exit from it properly?
+docker run -ti ubuntu bash. Type exit.
+
+8. If you wanted to remove all stopped containers from your system, what command would you use?
+docker container prune.
+
+9. What happens when you run docker run alpine echo "Hello, World!"? Explain step-by-step.
+Docker will first check if alpine is in oyur machine locally, if not, then it will pull it from the Docker Store. It will then 
+create a container alpine for the alpine image. It will then run echo "Hello, World!" therefore printing hello world in the container.
+Prints Hello, World! to the terminal then exits the container. 
+
+10. If a container is failing to start, what command would you use to check its logs?
+docker logs <container_id>.
+
+11. What is the difference between docker stop and docker kill? When should each be used?
+docker stop is more of a clean shutdown and used when you just want to shutdown your container. Docker kill is terminating the container,
+its used when you have a unresponsive container.
+
+12. How do you remove an image from your system, and what should you check before doing so?
+docker rmi <image_id>. You should check if any active containers are using that image.
